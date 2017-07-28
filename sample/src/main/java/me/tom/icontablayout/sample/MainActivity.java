@@ -18,5 +18,6 @@ public class MainActivity extends AppCompatActivity {
         DemoPagerAdapter adapter = new DemoPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setBadgeValue(2, "99+");
     }
 }

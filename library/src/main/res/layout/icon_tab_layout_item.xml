@@ -3,12 +3,27 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/iconView"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="@dimen/icon_tab_layout_item_icon_size"
-        android:layout_height="@dimen/icon_tab_layout_item_icon_size"
-        android:layout_marginTop="@dimen/icon_tab_layout_item_icon_margin_top"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iconView"
+            android:layout_centerHorizontal="true"
+            android:layout_width="@dimen/icon_tab_layout_item_icon_size"
+            android:layout_height="@dimen/icon_tab_layout_item_icon_size"
+            android:layout_marginTop="@dimen/icon_tab_layout_item_icon_margin_top"/>
+        <TextView
+            android:id="@+id/badgeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/iconView"
+            android:paddingLeft="@dimen/icon_tab_layout_item_badge_padding_left"
+            android:paddingRight="@dimen/icon_tab_layout_item_badge_padding_right"
+            android:background="@drawable/icon_tab_layout_item_badge_background"
+            android:textColor="@color/colorIconTabLayoutItemBadgeText"
+            android:textSize="@dimen/icon_tab_layout_item_badge_font_size"
+            android:visibility="invisible"/>
+    </RelativeLayout>
     <TextView
         android:id="@+id/titleView"
         android:gravity="center"

@@ -62,6 +62,20 @@ public class IconTabLayout extends TabLayout {
         });
     }
 
+    public void setBadgeValue(int tabPosition, String badgeValue) {
+        View view = getTabAt(tabPosition).getCustomView();
+        if (view == null) {
+            return;
+        }
+        TextView badgeView = (TextView) view.findViewById(R.id.badgeView);
+        badgeView.setText(badgeValue);
+        if (badgeValue == null || badgeValue.length() == 0) {
+            badgeView.setVisibility(INVISIBLE);
+        } else {
+            badgeView.setVisibility(VISIBLE);
+        }
+    }
+
     public void setTabTextColor(int color) {
         mTabTextColor = color;
         int count = getTabCount();
@@ -112,16 +126,18 @@ public class IconTabLayout extends TabLayout {
             return;
         }
         View view = getTabAt(position).getCustomView();
-        if (isSelected) {
-            ((ImageView) view.findViewById(R.id.iconView)).setImageResource(
-                    mAdapter.getPageSelectedIconResId(position)
-            );
-            ((TextView) view.findViewById(R.id.titleView)).setTextColor(mTabSelectedTextColor);
-        } else {
-            ((ImageView) view.findViewById(R.id.iconView)).setImageResource(
-                    mAdapter.getPageIconResId(position)
-            );
-            ((TextView) view.findViewById(R.id.titleView)).setTextColor(mTabTextColor);
+        if (view != null) {
+            if (isSelected) {
+                ((ImageView) view.findViewById(R.id.iconView)).setImageResource(
+                        mAdapter.getPageSelectedIconResId(position)
+                );
+                ((TextView) view.findViewById(R.id.titleView)).setTextColor(mTabSelectedTextColor);
+            } else {
+                ((ImageView) view.findViewById(R.id.iconView)).setImageResource(
+                        mAdapter.getPageIconResId(position)
+                );
+                ((TextView) view.findViewById(R.id.titleView)).setTextColor(mTabTextColor);
+            }
         }
     }
 }

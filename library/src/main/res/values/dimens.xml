@@ -4,4 +4,8 @@
     <dimen name="icon_tab_layout_item_icon_size">24dp</dimen>
     <dimen name="icon_tab_layout_item_icon_margin_top">7dp</dimen>
     <dimen name="icon_tab_layout_item_title_font_size">10sp</dimen>
+    <dimen name="icon_tab_layout_item_badge_font_size">10sp</dimen>
+    <dimen name="icon_tab_layout_item_badge_padding_left">3dp</dimen>
+    <dimen name="icon_tab_layout_item_badge_padding_right">3dp</dimen>
+    <dimen name="icon_tab_layout_item_badge_radius">8dp</dimen>
 </resources>
